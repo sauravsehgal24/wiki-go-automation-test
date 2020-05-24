@@ -1,0 +1,273 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-05-24T23:25:48.250Z",
+    "end": "2020-05-24T23:25:54.172Z",
+    "duration": 5922,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c0b18874-e21c-488c-9342-932c0f70232c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "13fb00fd-dcd1-4e2b-a491-4a55daa85065",
+          "title": "#MAIN TEST",
+          "fullFile": "D:\\Selenium\\WikiGoApp_Smoke_Test_Case\\TestSuite\\main.test.js",
+          "file": "\\TestSuite\\main.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "#MAIN TEST \"before all\" hook",
+              "timedOut": false,
+              "duration": 18,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = new Builder().forBrowser('firefox').build();\nactions = driver.actions({async: true});\nkb = actions.keyboard();\nmouse = actions.mouse();",
+              "err": {},
+              "uuid": "0ad750c7-c35d-415b-8dbc-38f79ede12cf",
+              "parentUUID": "13fb00fd-dcd1-4e2b-a491-4a55daa85065",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "run main test",
+              "fullTitle": "#MAIN TEST run main test",
+              "timedOut": false,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "addArticleTests(driver,actions,kb,mouse)\nviewAllArticlesTests(driver,actions,kb,mouse)",
+              "err": {},
+              "uuid": "0a272d29-90a4-4e44-a0cf-5bcc1a43042b",
+              "parentUUID": "13fb00fd-dcd1-4e2b-a491-4a55daa85065",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0a272d29-90a4-4e44-a0cf-5bcc1a43042b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        },
+        {
+          "uuid": "bf395789-2750-4fc9-82d7-1059f3726904",
+          "title": "#Add functionality",
+          "fullFile": "D:\\Selenium\\WikiGoApp_Smoke_Test_Case\\TestSuite\\viewAllArticlesTest.js",
+          "file": "\\TestSuite\\viewAllArticlesTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "89286549-a542-42de-a4bd-78121b40d15c",
+              "title": "Firefox",
+              "fullFile": "D:\\Selenium\\WikiGoApp_Smoke_Test_Case\\TestSuite\\viewAllArticlesTest.js",
+              "file": "\\TestSuite\\viewAllArticlesTest.js",
+              "beforeHooks": [],
+              "afterHooks": [
+                {
+                  "title": "\"after all\" hook",
+                  "fullTitle": "#Add functionality Firefox \"after all\" hook",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "setTimeout(()=>{\n    driver.quit()\n},5000)",
+                  "err": {},
+                  "uuid": "a9c0c100-1fc6-4fcd-82df-56e048c8d3bd",
+                  "parentUUID": "89286549-a542-42de-a4bd-78121b40d15c",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "tests": [
+                {
+                  "title": "should open wikigoapptest.herokuapp.com and click on Add New Article",
+                  "fullTitle": "#Add functionality Firefox should open wikigoapptest.herokuapp.com and click on Add New Article",
+                  "timedOut": false,
+                  "duration": 5348,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "driver.then(()=>{\n  return driver.get('https://wikigoapptest.herokuapp.com/');\n})\n.then(()=>{\n  return driver.findElement(By.xpath('/html/body/div[1]/nav/div/div/a[2]/a'))\n})\n.then((element)=>{\n  actions.pause(mouse).move({origin: element}).press().release();\n  return actions.perform();\n})\n.then(()=>{\n  done()\n})\n.catch((err)=>{\n  done(err)\n})",
+                  "err": {},
+                  "uuid": "2b76b541-c6b1-4f95-a0d0-4a5b1506d255",
+                  "parentUUID": "89286549-a542-42de-a4bd-78121b40d15c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "supply data to inputs and click on add button",
+                  "fullTitle": "#Add functionality Firefox supply data to inputs and click on add button",
+                  "timedOut": false,
+                  "duration": 459,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const supplyInputValues = ()=>{\n  const dataSet = [\"newjam123\",\"newjam123 author\",\"newjam123 genere\"]\n  return new Promise((resolve,reject)=>{\n    dataSet.map((data)=>{\n      const index = dataSet.indexOf(data)+1\n       driver.findElement(By.xpath(`/html/body/div[1]/div/div/div[${index}]/input`))\n      .then((element)=>{\n        element.sendKeys(data);\n        if(index === 2)\n          resolve()\n      })\n      .catch(err=>{\n        done(err)\n      })\n    })\n  })\n}\n  \nsupplyInputValues()\n.then(()=>{\n  return driver.findElement(By.xpath('/html/body/div[1]/div/div/button[1]'))\n})\n.then((element)=>{\n  actions.pause(mouse).move({origin: element}).press().release();\n  return actions.perform();\n})\n.then(()=>{\n  done()\n})\n.catch((err)=>{\n  console.log(\"ERROR IS: \"+err)\n  done(err)\n})",
+                  "err": {},
+                  "uuid": "c23f4118-1e07-4f44-a077-ec9b5c9e6b64",
+                  "parentUUID": "89286549-a542-42de-a4bd-78121b40d15c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2b76b541-c6b1-4f95-a0d0-4a5b1506d255",
+                "c23f4118-1e07-4f44-a077-ec9b5c9e6b64"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5807,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 100000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        },
+        {
+          "uuid": "85abf475-7508-4382-af0b-d475ff31a83c",
+          "title": "#View all articles",
+          "fullFile": "D:\\Selenium\\WikiGoApp_Smoke_Test_Case\\TestSuite\\viewAllArticlesTest.js",
+          "file": "\\TestSuite\\viewAllArticlesTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a014f454-06c3-4ecf-992c-fdd6be848fc3",
+              "title": "Firefox",
+              "fullFile": "D:\\Selenium\\WikiGoApp_Smoke_Test_Case\\TestSuite\\viewAllArticlesTest.js",
+              "file": "\\TestSuite\\viewAllArticlesTest.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "just testing",
+                  "fullTitle": "#View all articles Firefox just testing",
+                  "timedOut": false,
+                  "duration": 65,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "driver.findElement(By.xpath('/html/body/div[1]/nav/h4')).getText()\n.then(element=>{\n    assert.equal(element,\"| Add New Article\")\n    done()\n})\n.catch(err=>{\n    done(err)\n})",
+                  "err": {},
+                  "uuid": "309ec4ec-90f0-42c1-b51a-8d0531b84e56",
+                  "parentUUID": "a014f454-06c3-4ecf-992c-fdd6be848fc3",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "309ec4ec-90f0-42c1-b51a-8d0531b84e56"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 65,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 100000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
